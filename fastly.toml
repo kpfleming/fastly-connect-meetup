@@ -1,0 +1,24 @@
+# This file describes a Fastly Compute package. To learn more visit:
+# https://developer.fastly.com/reference/fastly-toml/
+
+authors = ["kevin.fleming@fastly.com"]
+cloned_from = "https://github.com/fastly/compute-starter-kit-javascript-empty"
+description = "Starter Kit for Fastly Connect Meetup"
+language = "javascript"
+manifest_version = 3
+name = "fastly-connect-meetup"
+service_id = ""
+
+[scripts]
+  build = "npm run build"
+  post_init = "npm install"
+
+[setup]
+  [setup.backends]
+    [setup.backends.demo_backend]
+      address = "superb-full-fuchsia.glitch.me"
+      description = "Markdown Converter on Glitch"
+      port = 443
+  [setup.kv_stores]
+    [setup.kv_stores.demo_kv_store]
+      description = "Stores items from Markdown Converter"
