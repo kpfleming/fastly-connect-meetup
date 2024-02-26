@@ -18,6 +18,7 @@ service_id = ""
     [setup.backends.demo_backend]
       address = "superb-full-fuchsia.glitch.me"
       description = "Markdown Converter on Glitch"
+      override_host = "superb-full-fuchsia.glitch.me"
       port = 443
   [setup.kv_stores]
     [setup.kv_stores.demo_kv_store]
