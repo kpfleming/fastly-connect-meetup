@@ -13,6 +13,17 @@ service_id = ""
   build = "npm run build"
   post_init = "npm install"
 
+[local_server]
+  [local_server.backends]
+    [local_server.backends.demo_backend]
+      url = "https://superb-full-fuchsia.glitch.me"
+      override_host = "superb-full-fuchsia.glitch.me"
+
+  [local_server.kv_stores]
+    [[local_server.kv_stores.demo_kv_store]]
+      key = "items"
+      data = "{[{\"id\":\"1700494711804\",\"contents\":\"# This is Markdown *Hello world*\",\"ver\":3},{\"id\":\"1700494512804\",\"contents\":\"I have a pen. *I also have an apple.*\",\"ver\":12},{\"id\":1709066991794,\"contents\":\"# This is Markdown\\n\\nHello world, this is a ~~complicated~~ *very simple* example.\\n\\nHere are some points:\\n\\n* One\\n* Two\\n* Three\"}]}"
+
 [setup]
   [setup.backends]
     [setup.backends.demo_backend]
